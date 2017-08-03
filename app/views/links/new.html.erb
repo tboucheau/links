@@ -1,5 +1,13 @@
-<h1>New Link</h1>
-
+<div class="container">
+    <nav>
+        <div class="nav-wrapper">
+          <div class="col s12">
+            <%= link_to "Links", root_path, class: "breadcrumb" %>
+            <a href="#!" class="breadcrumb">Nouveau Lien</a>
+          </div>
+        </div>
+    </nav>
+</div>
 <%= render 'form' %>
 
 <%= link_to 'Back', links_path %>

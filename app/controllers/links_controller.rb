@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /links
   # GET /links.json
   def index
@@ -25,6 +25,19 @@ class LinksController < ApplicationController
   # POST /links.json
   def create
     @link = Link.new(link_params)
+    object = LinkThumbnailer.generate(@link.url)
+    if object.description.nil?
+      @link.description = "Pas de description pour ce site"
+    else
+      @link.description = object.description
+    end
+    @link.title = object.title
+    if !object.images.first.nil?
+      @link.img = object.images.first.src
+    else
+      @link.img = "http://www.clker.com/cliparts/f/Z/G/4/h/Q/no-image-available-md.png"
+    end
+    
 
     respond_to do |format|
       if @link.save
@@ -69,6 +82,6 @@ class LinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
-      params.require(:link).permit(:title, :description)
+      params.require(:link).permit(:title, :description, :url)
     end
 end
