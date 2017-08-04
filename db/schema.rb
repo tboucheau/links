@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170803165836) do
+ActiveRecord::Schema.define(version: 20170804211453) do
 
   create_table "links", force: :cascade do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170803165836) do
     t.datetime "updated_at",  null: false
     t.string   "url"
     t.string   "img"
+    t.integer  "visit_nb"
   end
 
 end
