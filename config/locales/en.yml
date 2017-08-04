@@ -20,4 +20,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  will_paginate:
+    previous_label: "&#8592; Précédent"
+    next_label: "Suivant &#8594;"
+    page_gap: "&hellip;"
+    
+    page_entries_info:
+      single_page:
+        zero:  "Aucun lien trouvé"
+        one:   "affichage d'1 lien"
+        other: "Affichage des %{count} liens"
+      single_page_html:
+        zero:  "Aucun lien trouvé"
+        one:   "Affichage d'<b>1</b> lien"
+        other: "Affichage <b>des&nbsp;%{count}</b> liens"
+
+      multi_page: "Affichage des liens %{from} - %{to} sur %{count} au total"
+      multi_page_html: "Affichage des liens <b>%{from}&nbsp;-&nbsp;%{to}</b> sur <b>%{count}</b> au total"

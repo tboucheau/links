@@ -4,24 +4,28 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Starter Template - Materialize</title>
+  <title>Links - The LinkManager WebApp</title>
 
   <!-- CSS  -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-    <!--  Scripts-->
+  <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="http://materializecss.com/bin/materialize.js"></script>
-  <script src="http://materializecss.com/templates/starter-template/js/init.js"></script>
+  <script src="https://materializecss.com/bin/materialize.js"></script>
+  <script src="https://materializecss.com/templates/starter-template/js/init.js"></script>
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  
   
 </head>
 <body>
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><%= link_to "Links", root_path, id: "logo-container", class: "brand-logo" %>
       <ul class="right hide-on-med-and-down">
-        <li><%= link_to 'Admin', root_path %></li>
+        <li><%= link_to 'Admin', links_path %></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
@@ -41,34 +45,35 @@
     <br><br>
   </div>
 
-  <footer class="page-footer orange">
-    <div class="container">
+  <footer class="page-footer blue">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+        <div class="col l10 s12 offset-l2">
+          <h6 class="white-text">Qui suis-je ?</h6>
+          <p class="grey-text text-lighten-4">Xennial, je suis un geek qui s'amuse avec le code (ruby on rails) pour me simplifier la vie au quotidien.</p>
 
 
         </div>
+        <!-- à voir plus tard -->
         <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
+          <!--<h5 class="white-text">Settings</h5>
           <ul>
             <li><a class="white-text" href="#!">Link 1</a></li>
             <li><a class="white-text" href="#!">Link 2</a></li>
-          </ul>
+          </ul>-->
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
+          <!--<h5 class="white-text">Connect</h5>
           <ul>
             <li><a class="white-text" href="#!">Link 1</a></li>
             <li><a class="white-text" href="#!">Link 2</a></li>
-          </ul>
+          </ul>-->
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Made with <i class="material-icons">favorite</i> using <a href="https://materializecss.com/" class="grey-text text-lighten-4">Materialize CSS</a>
       </div>
     </div>
   </footer>

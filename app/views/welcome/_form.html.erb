@@ -1,7 +1,7 @@
 <%= form_for @link do |l| %>
     <div class="row">
         <div class="input-field col s5 offset-s2">
-            <%= l.text_field :url, id: "title", class: "validate" %>
+            <%= l.text_field :url, placeholder: "http://www.exemple.com", id: "title", class: "validate" %>
             <label class="active" for="title">Adresse du site</label>
         </div>
         <br>
