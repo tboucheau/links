@@ -14,11 +14,22 @@
           </li>
           <li class="collection-item avatar">
             <i class="material-icons circle">folder</i>
+            <span class="title">Liens morts</span>
+            <p>Sites qui ne fonctionnent plus</p>
+            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+          </li>
+          <li class="collection-item avatar">
+            <i class="material-icons circle">folder</i>
+            <span class="title">Non catégorisé</span>
+            <p>Sites sans catégorie</p>
+            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+          </li>
+          <li class="collection-item avatar">
+            <i class="material-icons circle">folder</i>
             <span class="title">Catégorie 1</span>
             <p>Sites de la Catégorie 1</p>
             <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
           </li>
-
         </ul>
     </div>
 
@@ -35,7 +46,7 @@
             <div class="card-stacked">
               <div class="card-content">
                 <p class="card-title"><%= obj.title %></p>
-                <p class="small"><%= obj.description %></p>
+                <p><%= obj.description %></p>
               </div>
               <div class="card-action">
                 <%= link_to 'Visiter', obj.url %><span class="new badge" data-badge-caption="Nouveau"><%= obj.visit_nb %></span>
