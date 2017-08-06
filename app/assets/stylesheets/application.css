@@ -28,3 +28,6 @@ main {
 .pagination li.active {
     background-color: #2196F3 !important;
 }
+.col, .row {
+    padding: 0 .75rem;
+}

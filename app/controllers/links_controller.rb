@@ -25,18 +25,10 @@ class LinksController < ApplicationController
   # POST /links.json
   def create
     @link = Link.new(link_params)
-    object = LinkThumbnailer.generate(@link.url)
-    if object.description.nil?
-      @link.description = "Pas de description pour ce site"
-    else
-      @link.description = object.description
-    end
-    @link.title = object.title
-    if !object.images.first.nil?
-      @link.img = object.images.first.src
-    else
-      @link.img = "http://www.clker.com/cliparts/f/Z/G/4/h/Q/no-image-available-md.png"
-    end
+    object = MetaInspector.new(@link.url)
+    @link.description = object.best_description
+    @link.title = object.best_title
+    @link.img = object.images.best
     
 
     respond_to do |format|

@@ -1,16 +1,46 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
+  <% if !notice.nil? %>
+    <div id="card-alert" class="card green lighten-5">
+      <div class="card-content green-text">
+        <p id="notice"><%= notice %></p>
+      </div>
+    </div>
+  <% end %>
+  <nav>
+    <div class="nav-wrapper blue darken-4">
+      <div class="col s10">
+        <a href="/" class="breadcrumb">Home</a>
+        <a href="/<%= @link.category %>" class="breadcrumb">
+          <% if !@link.category.nil? %>
+            <%= @link.category %>
+          <% else %>
+            Pas de catégorie
+          <% end %>
+        </a>
+        <a href="/" class="breadcrumb"><%= @link.title %></a>
+      </div>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <div class="card hoverable">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="<%= @link.img %>">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><%= @link.title %><i class="material-icons right">more_vert</i></span>
+          <p><%= link_to @link.url %></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%= @link.title %><i class="material-icons right">close</i></span>
+          <p><%= @link.description %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6 offset-m3 center">
+      <%= link_to 'Editer le lien, il manque des infos', edit_link_path(@link), class: "waves-effect waves-light btn red" %> 
+      <%= link_to 'Le lien est OK pour moi', root_path, class: "waves-effect waves-light btn blue" %>    
+    </div>
+  </div>
   
-  <p>
-    <strong>Title:</strong>
-    <%= @link.title %>
-  </p>
-  
-  <p>
-    <strong>Description:</strong>
-    <%= @link.description %>
-  </p>
-  
-  <%= link_to 'Edit', edit_link_path(@link) %> |
-  <%= link_to 'Back', links_path %>
 </div>
