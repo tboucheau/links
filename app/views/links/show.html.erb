@@ -10,11 +10,10 @@
     <div class="nav-wrapper blue darken-4">
       <div class="col s10">
         <a href="/" class="breadcrumb">Home</a>
-        <a href="/<%= @link.category %>" class="breadcrumb">
-          <% if !@link.category.nil? %>
-            <%= @link.category %>
-          <% else %>
+          <% if @link.category.nil? %>
             Pas de catégorie
+          <% else %>
+            <%= link_to 'Ajouter une catégorie', root_path, class: "breadcrumb" %>
           <% end %>
         </a>
         <a href="/" class="breadcrumb"><%= @link.title %></a>

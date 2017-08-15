@@ -207,5 +207,8 @@ DEPENDENCIES
   web-console (~> 2.0)
   will_paginate-materialize
 
+RUBY VERSION
+   ruby 2.3.4p301
+
 BUNDLED WITH
-   1.14.4
+   1.15.3
