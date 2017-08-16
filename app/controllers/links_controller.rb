@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: [:show, :edit, :update, :destroy]
+  before_action :set_link, only: [:show, :edit, :update, :destroy, :update_info]
   
   # GET /links
   # GET /links.json
@@ -40,6 +40,15 @@ class LinksController < ApplicationController
         format.json { render json: @link.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  def update_info
+    object = MetaInspector.new(@link.url)
+    @link.description = object.best_description
+    @link.title = object.best_title
+    @link.img = object.images.best
+    @link.save
+    redirect_to links_url, notice: 'Link was successfully updated.'
   end
 
   # PATCH/PUT /links/1
